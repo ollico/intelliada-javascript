@@ -1,0 +1,38 @@
+{
+    "name": "intelliada",
+    "version": "0.1.0",
+    "description": "Cookieless Intelliada analytics for the browser.",
+    "keywords": ["analytics", "privacy", "intelliada"],
+    "license": "MIT",
+    "type": "module",
+    "homepage": "https://intelliada.com",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ollico/intelliada-js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ollico/intelliada-js/issues"
+    },
+    "files": ["dist", "types"],
+    "sideEffects": false,
+    "main": "./dist/index.js",
+    "types": "./types/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./types/index.d.ts",
+            "import": "./dist/index.js"
+        }
+    },
+    "scripts": {
+        "build": "node build.js && tsc",
+        "types:check": "tsc --noEmit",
+        "format": "prettier --write src build.js",
+        "format:check": "prettier --check src build.js",
+        "prepare": "npm run build"
+    },
+    "devDependencies": {
+        "esbuild": "^0.25.0",
+        "prettier": "^3.4.2",
+        "typescript": "^5.7.2"
+    }
+}
